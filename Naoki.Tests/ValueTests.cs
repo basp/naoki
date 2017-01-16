@@ -1,8 +1,8 @@
 ﻿namespace Naoki.Tests
 {
+    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Ploeh.AutoFixture;
-    using System;
 
     [TestClass]
     public class ValueTests
@@ -13,13 +13,14 @@
             // Arrange
             var fix = new Fixture();
             var exp = fix.Create<int>();
-            var val = Value.Create(exp);
 
             // Act
+            var val = Value.Create(exp);
             var act = val.GetInt();
 
             // Assert
             Assert.AreEqual(exp, act);
+            Assert.IsTrue(val.Type == Naoki.Type.Int);
         }
 
         [TestMethod]
@@ -28,13 +29,14 @@
             // Arrange
             var fix = new Fixture();
             var exp = fix.Create<string>();
-            var val = Value.Create(exp);
 
             // Act
+            var val = Value.Create(exp);
             var act = val.GetString();
 
             // Assert
             Assert.AreEqual(exp, act);
+            Assert.IsTrue(val.Type == Naoki.Type.String);
         }
 
         [TestMethod]
@@ -43,13 +45,14 @@
             // Arrange
             var fix = new Fixture();
             var exp = fix.Create<decimal>();
-            var val = Value.Create(exp);
 
             // Act
+            var val = Value.Create(exp);
             var act = val.GetDecimal();
 
             // Assert
             Assert.AreEqual(exp, act);
+            Assert.IsTrue(val.Type == Naoki.Type.Decimal);
         }
 
         [TestMethod]
@@ -58,13 +61,14 @@
             // Arrange
             var fix = new Fixture();
             var exp = fix.Create<bool>();
-            var val = Value.Create(exp);
 
             // Act
+            var val = Value.Create(exp);
             var act = val.GetBool();
 
             // Assert
             Assert.AreEqual(exp, act);
+            Assert.IsTrue(val.Type == Naoki.Type.Bool);
         }
 
         [TestMethod]
@@ -73,13 +77,14 @@
             // Arrange
             var fix = new Fixture();
             var exp = fix.Create<DateTime>();
-            var val = Value.Create(exp);
 
             // Act
+            var val = Value.Create(exp);
             var act = val.GetDateTime();
 
             // Assert
             Assert.AreEqual(exp, act);
+            Assert.IsTrue(val.Type == Naoki.Type.DateTime);
         }
 
         [TestMethod]
@@ -90,7 +95,6 @@
         [TestMethod]
         public void CreateList()
         {
-
         }
     }
 }

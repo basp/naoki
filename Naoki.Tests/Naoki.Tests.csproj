@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\Naoki\Naoki.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -58,6 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MemoryRepositoryTests.cs" />
     <Compile Include="ObjectTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueTests.cs" />
@@ -70,6 +72,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

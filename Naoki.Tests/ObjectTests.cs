@@ -1,9 +1,10 @@
 ﻿namespace Naoki.Tests
 {
+    using System;
+    using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Naoki;
     using Ploeh.AutoFixture;
-    using System.Linq;
 
     [TestClass]
     public class ObjectTests
@@ -12,7 +13,7 @@
         public void Create()
         {
             // Act
-            var root = Object.Create();
+            var root = Naoki.Object.Create();
 
             // Assert
             Assert.IsInstanceOfType(root, typeof(IObject));
@@ -24,7 +25,7 @@
             // Arrange
             var fix = new Fixture();
             var value = Value.Create(fix.Create<string>());
-            var root = Object.Create();
+            var root = Naoki.Object.Create();
 
             // Act
             var prop = root
@@ -39,13 +40,21 @@
         }
 
         [TestMethod]
+        public void AddTwoProperties()
+        {
+            var fix = new Fixture();
+            var val1 = Value.Create(fix.Create<string>());
+            var val2 = Value.Create(fix.Create<DateTime>());
+        }
+
+        [TestMethod]
         public void GetProperties()
         {
             // Arrange
             var fix = new Fixture();
             var val1 = fix.Create<string>();
             var val2 = fix.Create<int>();
-            var root = Object.Create();
+            var root = Naoki.Object.Create();
 
             root.AddProperty("foo").Set(Value.Create(val1));
             root.AddProperty("bar").Set(Value.Create(val2));
@@ -60,8 +69,10 @@
             // Assert
             foo.Get().MatchSome(x => Assert.AreEqual(val1, x.GetString()));
             foo.Get().MatchNone(() => Assert.Fail());
+
             bar.Get().MatchSome(x => Assert.AreEqual(val2, x.GetInt()));
             bar.Get().MatchNone(() => Assert.Fail());
+
             baz.Get().MatchSome(x => Assert.Fail());
         }
     }

@@ -12,7 +12,7 @@
         private readonly bool b;
         private readonly DateTime dt;
         private readonly string s;
-        private readonly IObjectId obj;
+        private readonly IKey obj;
         private readonly IList<IValue> list;
 
         private Value(Type type)
@@ -57,7 +57,7 @@
             this.s = s;
         }
 
-        private Value(IObjectId obj)
+        private Value(IKey obj)
             : this(Type.Object)
         {
             this.obj = obj;
@@ -67,6 +67,14 @@
             : this(Type.List)
         {
             this.list = list;
+        }
+
+        public Type Type
+        {
+            get
+            {
+                return this.type;
+            }
         }
 
         public static Value Create(int val)
@@ -94,7 +102,7 @@
             return new Value(val);
         }
 
-        public static Value Create(IObjectId val)
+        public static Value Create(IKey val)
         {
             return new Value(val);
         }
@@ -129,7 +137,7 @@
             return this.b;
         }
 
-        public IObjectId GetObject()
+        public IKey GetObject()
         {
             return this.obj;
         }

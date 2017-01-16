@@ -46,11 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IKey.cs" />
     <Compile Include="IObject.cs" />
     <Compile Include="IProperty.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="IValue.cs" />
     <Compile Include="Object.cs" />
-    <Compile Include="IObjectId.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Value.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,6 +5,8 @@
 
     public interface IValue
     {
+        Type Type { get; }
+
         string GetString();
 
         int GetInt();
@@ -17,6 +19,6 @@
 
         IList<IValue> GetList();
 
-        IObjectId GetObject();
+        IKey GetObject();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Naoki
 {
-    public interface IObjectId
+    public interface IKey
     {
     }
 }
