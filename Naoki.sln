@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naoki", "Naoki\Naoki.csproj", "{32AC9407-E745-4425-BFA1-FD90D861CBC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naoki.Tests", "Naoki.Tests\Naoki.Tests.csproj", "{989F7A2A-B599-4B1C-9820-686A21854C02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32AC9407-E745-4425-BFA1-FD90D861CBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32AC9407-E745-4425-BFA1-FD90D861CBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32AC9407-E745-4425-BFA1-FD90D861CBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32AC9407-E745-4425-BFA1-FD90D861CBC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989F7A2A-B599-4B1C-9820-686A21854C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989F7A2A-B599-4B1C-9820-686A21854C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989F7A2A-B599-4B1C-9820-686A21854C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989F7A2A-B599-4B1C-9820-686A21854C02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
