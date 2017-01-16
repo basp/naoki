@@ -50,6 +50,7 @@
     <Compile Include="IProperty.cs" />
     <Compile Include="IValue.cs" />
     <Compile Include="Object.cs" />
+    <Compile Include="IObjectId.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Value.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

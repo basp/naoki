@@ -12,6 +12,8 @@
         private readonly bool b;
         private readonly DateTime dt;
         private readonly string s;
+        private readonly IObjectId obj;
+        private readonly IList<IValue> list;
 
         private Value(Type type)
         {
@@ -20,7 +22,9 @@
             this.d = 0;
             this.b = false;
             this.dt = DateTime.MinValue;
-            this.s = null;
+            this.s = string.Empty;
+            this.obj = null;
+            this.list = new List<IValue>();
         }
 
         private Value(int i)
@@ -53,6 +57,18 @@
             this.s = s;
         }
 
+        private Value(IObjectId obj)
+            : this(Type.Object)
+        {
+            this.obj = obj;
+        }
+
+        private Value(IList<IValue> list)
+            : this(Type.List)
+        {
+            this.list = list;
+        }
+
         public static Value Create(int val)
         {
             return new Value(val);
@@ -74,6 +90,16 @@
         }
 
         public static Value Create(bool val)
+        {
+            return new Value(val);
+        }
+
+        public static Value Create(IObjectId val)
+        {
+            return new Value(val);
+        }
+
+        public static Value Create(IList<IValue> val)
         {
             return new Value(val);
         }
@@ -101,6 +127,16 @@
         public bool GetBool()
         {
             return this.b;
+        }
+
+        public IObjectId GetObject()
+        {
+            return this.obj;
+        }
+
+        public IList<IValue> GetList()
+        {
+            return this.list;
         }
     }
 }

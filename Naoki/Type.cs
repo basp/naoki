@@ -13,5 +13,7 @@
         public static readonly Type String = new Type();
 
         public static readonly Type Object = new Type();
+
+        public static readonly Type List = new Type();
     }
 }

@@ -5,13 +5,19 @@
     public class Property : IProperty
     {
         private readonly string name;
-        private Type type;
         private Option<Value> value;
 
-        public Property(string name, Type type)
+        public Property(string name)
         {
             this.name = name;
-            this.type = type;
+        }
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
         }
 
         public Option<Value> Get()
