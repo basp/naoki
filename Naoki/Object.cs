@@ -1,9 +1,12 @@
-﻿using System;
-
-namespace Naoki
+﻿namespace Naoki
 {
+    using System.Collections.Generic;
+
     public class Object : IObject
     {
+        private readonly IDictionary<string, IProperty> properties =
+            new Dictionary<string, IProperty>();
+
         private Object()
         {
         }
@@ -13,10 +16,11 @@ namespace Naoki
             return new Object();
         }
 
-
-        IProperty IObject.AddProperty(string v, Type @string)
+        public IProperty AddProperty(string name, Type type)
         {
-            throw new NotImplementedException();
+            var prop = new Property(name, type);
+            this.properties.Add(name, prop);
+            return prop;
         }
     }
 }

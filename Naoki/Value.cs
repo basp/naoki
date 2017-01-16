@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public struct Value
+    public struct Value : IValue
     {
         private readonly Type type;
 
@@ -12,7 +12,6 @@
         private readonly bool b;
         private readonly DateTime dt;
         private readonly string s;
-        private readonly IList<Value> list;
 
         private Value(Type type)
         {
@@ -22,7 +21,6 @@
             this.b = false;
             this.dt = DateTime.MinValue;
             this.s = null;
-            this.list = null;
         }
 
         private Value(int i)
@@ -78,6 +76,31 @@
         public static Value Create(bool val)
         {
             return new Value(val);
+        }
+
+        public string GetString()
+        {
+            return this.s;
+        }
+
+        public int GetInt()
+        {
+            return this.i;
+        }
+
+        public decimal GetDecimal()
+        {
+            return this.d;
+        }
+
+        public DateTime GetDateTime()
+        {
+            return this.dt;
+        }
+
+        public bool GetBool()
+        {
+            return this.b;
         }
     }
 }

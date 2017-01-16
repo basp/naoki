@@ -17,14 +17,14 @@
         [TestMethod]
         public void AddProperty()
         {
-            var value = Value.Create("frotz");
+            var value = Value.Create("quux");
             var root = Naoki.Object.Create();
             var prop = root
                 .AddProperty("frotz", Naoki.Type.String)
                 .Set(value);
 
-            var act = prop.Get();
-            Assert.AreEqual("quux", act);
+            prop.Get().MatchSome(x => Assert.AreEqual("quux", x.GetString()));
+            prop.Get().MatchNone(() => Assert.Fail());
         }
     }
 }

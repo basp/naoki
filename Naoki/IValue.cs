@@ -13,7 +13,5 @@
         DateTime GetDateTime();
 
         bool GetBool();
-
-
     }
 }

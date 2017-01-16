@@ -1,9 +1,11 @@
 ﻿namespace Naoki
 {
+    using Optional;
+
     public interface IProperty
     {
         IProperty Set(Value value);
 
-        Value Get();
+        Option<Value> Get();
     }
 }
